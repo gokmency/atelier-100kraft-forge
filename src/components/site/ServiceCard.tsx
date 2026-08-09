@@ -1,15 +1,16 @@
 import { useRef } from "react";
 import { useInView } from "motion/react";
-import { Reveal } from "./Reveal";
 import { useLanguage } from "../../context/LanguageContext";
 import { Service, ProcessVisual } from "./Services";
 
 export function ServiceCard({ s }: { s: Partial<Service> }) {
   const { t } = useLanguage();
-  const item = t.services.items[s.id as keyof typeof t.services.items];
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: false, amount: 0.5 });
 
+  if (!s.id || !s.visual) return null;
+
+  const item = t.services.items[s.id as keyof typeof t.services.items];
   return (
     <div
       ref={ref}
