@@ -67,8 +67,8 @@ export function Contact() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-10 max-w-sm text-base leading-relaxed text-muted-foreground">
-                Working with clients across Europe and the Middle East. Send a brief, a sketch or
-                a CAD file — we reply within two working days.
+                Working with clients across Europe and the Middle East. Send a brief, a sketch or a
+                CAD file — we reply within two working days.
               </p>
             </Reveal>
           </div>
@@ -81,12 +81,22 @@ export function Contact() {
 export function Footer() {
   return (
     <footer className="border-t border-border py-10">
-      <div className="mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-4 px-6 md:px-12">
+      <div className="mx-auto flex max-w-[1600px] flex-col md:flex-row items-center justify-between gap-4 px-6 md:px-12">
         <span className="font-display text-base tracking-[-0.04em]">100KRAFT</span>
-        <span className="label-technical">
+        <span className="label-technical text-center">
           Product Design · 3D Printing · Mold Design · Manufacturing
         </span>
-        <span className="label-technical">© {new Date().getFullYear()} Antalya</span>
+        <div className="flex flex-col items-end gap-2">
+          <span className="label-technical">© {new Date().getFullYear()} Antalya</span>
+          <a
+            href="https://grainz.studio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Designed by GRAINZ STUDIO
+          </a>
+        </div>
       </div>
     </footer>
   );
