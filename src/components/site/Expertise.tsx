@@ -1,4 +1,5 @@
 import { Reveal, SectionLabel } from "./Reveal";
+import { useLanguage } from "../../context/LanguageContext";
 import mold from "@/assets/mold.jpg";
 
 const items = [
@@ -17,10 +18,12 @@ const items = [
 ];
 
 export function Expertise() {
+  const { t } = useLanguage();
+  const items = t.expertise.items;
   return (
     <section className="relative border-t border-border py-28 md:py-40">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
-        <SectionLabel index="07" title="Manufacturing Expertise" />
+        <SectionLabel index={t.expertise.label} title={t.expertise.title} />
 
         <div className="mt-16 grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-5">
@@ -41,7 +44,7 @@ export function Expertise() {
           <div className="lg:col-span-7 lg:pl-8">
             <Reveal>
               <h2 className="font-display text-[8vw] leading-[0.95] sm:text-5xl lg:text-[3.2rem]">
-                Design decisions that survive the production line.
+                {t.expertise.heading}
               </h2>
             </Reveal>
             <div className="mt-12 divide-y divide-border border-y border-border">

@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 import { Instagram } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { useLanguage } from "../../context/LanguageContext";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
-const links = [
-  { href: "/#about", label: "Atelier" },
-  { href: "/#services", label: "Services" },
-  { href: "/#projects", label: "Work" },
-];
-
 export function Nav() {
+  const { t, language, toggleLanguage } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
+
+  const links = [
+    { href: "/#about", label: t.nav.about },
+    { href: "/#services", label: t.nav.services },
+    { href: "/#projects", label: t.nav.projects },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -29,8 +31,7 @@ export function Nav() {
     >
       <div className="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-6 md:px-12">
         <a href="/#top" className="flex items-baseline gap-2">
-          <span className="font-display text-lg tracking-[-0.04em]">100KRAFT</span>
-          <span className="label-technical hidden sm:inline">Antalya</span>
+          <span className="font-display text-2xl tracking-[-0.04em]">100KRAFT</span>
         </a>
 
         <nav className="hidden items-center gap-9 md:flex">
@@ -88,7 +89,7 @@ export function Nav() {
           >
             <span className="absolute inset-0 translate-y-full bg-accent transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0" />
             <span className="label-technical relative text-foreground font-semibold transition-colors duration-500 group-hover:text-primary-foreground">
-              STORE
+              {t.nav.store}
             </span>
           </Link>
           <a
@@ -97,9 +98,15 @@ export function Nav() {
           >
             <span className="absolute inset-0 -translate-y-full bg-foreground transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0" />
             <span className="label-technical relative text-foreground transition-colors duration-500 group-hover:text-primary-foreground">
-              Start a Project
+              {t.nav.startProject}
             </span>
           </a>
+          <button
+            onClick={toggleLanguage}
+            className="label-technical transition-colors hover:text-foreground border border-foreground/20 px-3 py-2.5 cursor-pointer"
+          >
+            {language === "en" ? "TR" : "EN"}
+          </button>
         </div>
       </div>
     </header>

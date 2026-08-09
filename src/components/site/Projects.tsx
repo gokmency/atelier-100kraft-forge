@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Reveal, SectionLabel } from "./Reveal";
+import { useLanguage } from "../../context/LanguageContext";
 import sketch from "@/assets/case-sketch.jpg";
 import cad from "@/assets/case-cad.jpg";
 import final from "@/assets/case-final.jpg";
@@ -42,15 +43,16 @@ const projects = [
 ];
 
 export function Projects() {
+  const { t } = useLanguage();
   const [stage, setStage] = useState<(typeof stages)[number]["key"]>("sketch");
   const [openIndex, setOpenIndex] = useState(0);
   const activeStage = stages.find((s) => s.key === stage)!;
-  const project = projects[openIndex]!;
+  const project = projectKeys[openIndex];
 
   return (
     <section id="projects" className="relative border-t border-border py-28 md:py-40">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
-        <SectionLabel index="04" title="Selected Work" />
+        <SectionLabel index={t.projects.label} title={t.projects.title} />
 
         <div className="mt-16 grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-6">
@@ -59,7 +61,7 @@ export function Projects() {
                 <motion.img
                   key={`${openIndex}-${stage}`}
                   src={activeStage.image}
-                  alt={`${project.name} — ${activeStage.label} stage`}
+                  alt={`Project ${project} — ${activeStage.label} stage`}
                   loading="lazy"
                   width={1200}
                   height={1504}
@@ -96,8 +98,8 @@ export function Projects() {
 
           <div className="lg:col-span-6 lg:pl-8">
             <div className="divide-y divide-border">
-              {projects.map((p, i) => (
-                <Reveal key={p.id} delay={0.05 * i}>
+              {projectKeys.map((p, i) => (
+                <Reveal key={p} delay={0.05 * i}>
                   <button onClick={() => setOpenIndex(i)} className="group w-full py-8 text-left">
                     <div className="flex items-baseline justify-between gap-6">
                       <div className="flex items-baseline gap-5">
@@ -112,7 +114,9 @@ export function Projects() {
                           {p.name}
                         </h3>
                       </div>
-                      <span className="label-technical shrink-0">{p.year}</span>
+                      <span className="label-technical shrink-0">
+                        {p === "01" ? "2025" : "2024"}
+                      </span>
                     </div>
 
                     <AnimatePresence initial={false}>
@@ -125,11 +129,15 @@ export function Projects() {
                           className="overflow-hidden"
                         >
                           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
-                            {p.story}
+                            {t.projects.items[p as keyof typeof t.projects.items].story}
                           </p>
                           <div className="label-technical mt-6 flex flex-wrap gap-x-6 gap-y-2">
-                            <span>{p.sector}</span>
-                            <span className="text-accent">{p.scope}</span>
+                            <span>
+                              {t.projects.items[p as keyof typeof t.projects.items].sector}
+                            </span>
+                            <span className="text-accent">
+                              {t.projects.items[p as keyof typeof t.projects.items].scope}
+                            </span>
                           </div>
                         </motion.div>
                       )}

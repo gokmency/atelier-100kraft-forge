@@ -1,8 +1,10 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
+import { useLanguage } from "../../context/LanguageContext";
 import heroImage from "@/assets/hero-prototypes.jpg";
 
 export function Hero() {
+  const { t } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const imgY = useTransform(scrollYProgress, [0, 1], ["0%", "16%"]);
@@ -73,11 +75,10 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.3 }}
           >
             <span>Design &amp; Manufacturing Atelier</span>
-            <span className="text-accent">Antalya · TR</span>
           </motion.div>
 
           <h1 className="font-display text-[13vw] leading-[0.86] tracking-[-0.045em] sm:text-[9vw] lg:text-[7.4vw]">
-            {["From Idea", "to Production."].map((line, i) => (
+            {t.hero.titleLines.map((line, i) => (
               <span key={line} className="block overflow-hidden">
                 <motion.span
                   className="block"
@@ -87,7 +88,10 @@ export function Hero() {
                 >
                   {i === 1 ? (
                     <>
-                      to <span className="italic text-accent">Production.</span>
+                      {t.hero.titleLines[1].split(" ")[0]}{" "}
+                      <span className="italic text-accent">
+                        {t.hero.titleLines[1].split(" ").slice(1).join(" ")}
+                      </span>
                     </>
                   ) : (
                     line
@@ -103,7 +107,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
           >
-            Product Design, 3D Printing, Mold Design &amp; Manufacturing Consulting.
+            {t.hero.subtitle}
           </motion.p>
 
           <motion.div
@@ -118,14 +122,14 @@ export function Hero() {
             >
               <span className="absolute inset-0 translate-y-full bg-accent transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0" />
               <span className="label-technical relative text-primary-foreground">
-                Start a Project
+                {t.nav.startProject}
               </span>
               <span className="relative text-primary-foreground transition-transform duration-500 group-hover:translate-x-1">
                 →
               </span>
             </a>
             <a href="#projects" className="label-technical underline-offset-8 hover:underline">
-              View selected work
+              {t.hero.viewWork}
             </a>
           </motion.div>
         </motion.div>

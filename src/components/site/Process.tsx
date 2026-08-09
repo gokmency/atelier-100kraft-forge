@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Reveal, SectionLabel } from "./Reveal";
+import { useLanguage } from "../../context/LanguageContext";
 
 const steps = [
   {
@@ -36,15 +37,16 @@ const steps = [
 ];
 
 export function Process() {
+  const { t } = useLanguage();
   const [active, setActive] = useState(0);
 
   return (
     <section id="process" className="relative border-t border-border py-28 md:py-40">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="flex flex-wrap items-end justify-between gap-8">
-          <SectionLabel index="05" title="Process" />
+          <SectionLabel index={t.process.label} title={t.process.title} />
           <Reveal>
-            <span className="label-technical">Five stages · one continuous line</span>
+            <span className="label-technical">{t.process.subtitle}</span>
           </Reveal>
         </div>
 
@@ -53,14 +55,14 @@ export function Process() {
             <div className="absolute top-3 right-0 left-0 h-px bg-border" />
             <motion.div
               className="absolute top-3 left-0 h-px bg-accent"
-              animate={{ width: `${((active + 1) / steps.length) * 100}%` }}
+              animate={{ width: `${((active + 1) / stepKeys.length) * 100}%` }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             />
 
             <div className="grid grid-cols-2 gap-y-12 md:grid-cols-5 md:gap-0">
-              {steps.map((s, i) => (
+              {stepKeys.map((s, i) => (
                 <button
-                  key={s.id}
+                  key={s}
                   onMouseEnter={() => setActive(i)}
                   onClick={() => setActive(i)}
                   className="group relative pt-0 pr-6 text-left"
@@ -74,7 +76,7 @@ export function Process() {
                     style={{ marginTop: "-9px" }}
                   />
                   <div className="mt-7">
-                    <span className="label-technical">{s.id}</span>
+                    <span className="label-technical">{s}</span>
                     <h3
                       className={`mt-2 font-display text-2xl transition-colors duration-500 md:text-[1.7rem] ${
                         i === active ? "" : "text-muted-foreground"
@@ -91,17 +93,19 @@ export function Process() {
 
         <div className="mt-16 grid gap-10 border-t border-border pt-10 lg:grid-cols-12">
           <motion.p
-            key={steps[active]!.id}
+            key={stepKeys[active]}
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="font-display text-2xl leading-snug lg:col-span-7 lg:text-[2rem]"
           >
-            {steps[active]!.body}
+            {t.process.steps[stepKeys[active] as keyof typeof t.process.steps].body}
           </motion.p>
           <div className="lg:col-span-5 lg:pl-10">
-            <span className="label-technical">Deliverables</span>
-            <p className="mt-3 text-base text-muted-foreground">{steps[active]!.output}</p>
+            <span className="label-technical">{t.process.deliverables}</span>
+            <p className="mt-3 text-base text-muted-foreground">
+              {t.process.steps[stepKeys[active] as keyof typeof t.process.steps].output}
+            </p>
           </div>
         </div>
       </div>
