@@ -73,12 +73,16 @@ export function Projects() {
               <div className="absolute inset-0 border border-foreground/10" />
             </div>
 
-            <div className="mt-5 flex gap-px bg-border">
+            <div className="mt-5 flex gap-px bg-border" role="tablist" aria-label="Project stages">
               {stages.map((s) => (
                 <button
                   key={s.key}
+                  role="tab"
+                  aria-selected={stage === s.key}
+                  aria-controls={`panel-${s.key}`}
+                  id={`tab-${s.key}`}
                   onClick={() => setStage(s.key)}
-                  className={`flex-1 bg-background px-4 py-3 transition-colors ${
+                  className={`flex-1 bg-background px-4 py-3 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent ${
                     stage === s.key ? "bg-foreground" : "hover:bg-secondary"
                   }`}
                 >
@@ -95,34 +99,42 @@ export function Projects() {
           </div>
 
           <div className="lg:col-span-6 lg:pl-8">
-            <div className="divide-y divide-border">
+            <div className="divide-y divide-border" role="region" aria-label="Projects">
               {projects.map((p, i) => (
                 <Reveal key={p.id} delay={0.05 * i}>
-                  <button
-                    onClick={() => setOpenIndex(i)}
-                    className="group w-full py-8 text-left"
-                  >
-                    <div className="flex items-baseline justify-between gap-6">
-                      <div className="flex items-baseline gap-5">
-                        <span
-                          className={`label-technical ${openIndex === i ? "text-accent" : ""}`}
-                        >
-                          {p.id}
-                        </span>
-                        <h3
-                          className={`font-display text-3xl transition-colors md:text-[2.4rem] ${
-                            openIndex === i ? "" : "text-muted-foreground"
-                          } group-hover:text-foreground`}
-                        >
-                          {p.name}
-                        </h3>
+                  <div className="group w-full py-8 text-left">
+                    <button
+                      onClick={() => setOpenIndex(i)}
+                      aria-expanded={openIndex === i}
+                      aria-controls={`project-panel-${p.id}`}
+                      id={`project-header-${p.id}`}
+                      className="w-full text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-8 focus-visible:ring-offset-background rounded-sm"
+                    >
+                      <div className="flex items-baseline justify-between gap-6">
+                        <div className="flex items-baseline gap-5">
+                          <span
+                            className={`label-technical ${openIndex === i ? "text-accent" : ""}`}
+                          >
+                            {p.id}
+                          </span>
+                          <h3
+                            className={`font-display text-3xl transition-colors md:text-[2.4rem] ${
+                              openIndex === i ? "" : "text-muted-foreground"
+                            } group-hover:text-foreground`}
+                          >
+                            {p.name}
+                          </h3>
+                        </div>
+                        <span className="label-technical shrink-0">{p.year}</span>
                       </div>
-                      <span className="label-technical shrink-0">{p.year}</span>
-                    </div>
+                    </button>
 
                     <AnimatePresence initial={false}>
                       {openIndex === i && (
                         <motion.div
+                          id={`project-panel-${p.id}`}
+                          role="region"
+                          aria-labelledby={`project-header-${p.id}`}
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
@@ -139,7 +151,7 @@ export function Projects() {
                         </motion.div>
                       )}
                     </AnimatePresence>
-                  </button>
+                  </div>
                 </Reveal>
               ))}
             </div>

@@ -1,0 +1,3 @@
+## 2025-03-01 - Avoid nesting rich content inside interactive controls
+**Learning:** Custom interactive elements (like accordions or tab triggers) are often implemented using a large wrapper `<button>`, but nesting block-level elements like `<div>` or `<p>` inside a `<button>` produces invalid HTML. Furthermore, screen readers can flatten the content or misinterpret the reading flow when rich text resides inside button labels.
+**Action:** Always separate the trigger and the panel into distinct semantic elements. The trigger should be a `<button>` with appropriate ARIA attributes (e.g. `aria-expanded`, `aria-controls`), and the controlled content should live outside the `<button>` in a structural wrapper (like a `<div>` with `role="region"`).

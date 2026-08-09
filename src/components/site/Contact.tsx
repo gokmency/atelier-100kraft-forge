@@ -67,8 +67,8 @@ export function Contact() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-10 max-w-sm text-base leading-relaxed text-muted-foreground">
-                Working with clients across Europe and the Middle East. Send a brief, a sketch or
-                a CAD file — we reply within two working days.
+                Working with clients across Europe and the Middle East. Send a brief, a sketch or a
+                CAD file — we reply within two working days.
               </p>
             </Reveal>
           </div>
