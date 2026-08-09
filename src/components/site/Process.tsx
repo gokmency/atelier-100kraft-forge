@@ -38,9 +38,7 @@ const steps = [
 
 export function Process() {
   const { t } = useLanguage();
-  const stepKeys = ["01", "02", "03", "04", "05"] as const;
   const [active, setActive] = useState(0);
-  const activeKey = stepKeys[active] ?? stepKeys[0];
 
   return (
     <section id="process" className="relative border-t border-border py-28 md:py-40">

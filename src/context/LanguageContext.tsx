@@ -2,12 +2,11 @@ import React, { createContext, useContext, useState, ReactNode, useEffect } from
 import { translations } from "../lib/i18n";
 
 type Language = "en" | "tr";
-type Translation = (typeof translations)[Language];
 
 interface LanguageContextType {
   language: Language;
   toggleLanguage: () => void;
-  t: Translation;
+  t: typeof translations.en;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);

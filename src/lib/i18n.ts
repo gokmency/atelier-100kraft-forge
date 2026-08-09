@@ -162,7 +162,6 @@ export const translations = {
       title: "Contact",
       heading: "Tell us what you want to ",
       headingItalic: "build.",
-      heading2: "",
       atelier: "Atelier",
       desc: "Working with clients across Europe and the Middle East. Send a brief, a sketch or a CAD file — we reply within two working days.",
       inquiries: [

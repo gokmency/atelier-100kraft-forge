@@ -102,9 +102,7 @@ export function Nav() {
             </span>
           </a>
           <button
-            type="button"
             onClick={toggleLanguage}
-            aria-label={language === "en" ? "Switch language to Turkish" : "Switch language to English"}
             className="label-technical transition-colors hover:text-foreground border border-foreground/20 px-3 py-2.5 cursor-pointer"
           >
             {language === "en" ? "TR" : "EN"}
