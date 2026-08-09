@@ -47,7 +47,7 @@ export function Projects() {
   const [stage, setStage] = useState<(typeof stages)[number]["key"]>("sketch");
   const [openIndex, setOpenIndex] = useState(0);
   const activeStage = stages.find((s) => s.key === stage)!;
-  const project = projectKeys[openIndex];
+  const project = projects[openIndex]!;
 
   return (
     <section id="projects" className="relative border-t border-border py-28 md:py-40">
@@ -98,8 +98,8 @@ export function Projects() {
 
           <div className="lg:col-span-6 lg:pl-8">
             <div className="divide-y divide-border">
-              {projectKeys.map((p, i) => (
-                <Reveal key={p} delay={0.05 * i}>
+              {projects.map((p, i) => (
+                <Reveal key={p.id} delay={0.05 * i}>
                   <button onClick={() => setOpenIndex(i)} className="group w-full py-8 text-left">
                     <div className="flex items-baseline justify-between gap-6">
                       <div className="flex items-baseline gap-5">
@@ -115,7 +115,7 @@ export function Projects() {
                         </h3>
                       </div>
                       <span className="label-technical shrink-0">
-                        {p === "01" ? "2025" : "2024"}
+                        {p.year}
                       </span>
                     </div>
 
@@ -129,14 +129,14 @@ export function Projects() {
                           className="overflow-hidden"
                         >
                           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
-                            {t.projects.items[p as keyof typeof t.projects.items].story}
+                            {t.projects.items[p.id as keyof typeof t.projects.items].story}
                           </p>
                           <div className="label-technical mt-6 flex flex-wrap gap-x-6 gap-y-2">
                             <span>
-                              {t.projects.items[p as keyof typeof t.projects.items].sector}
+                              {t.projects.items[p.id as keyof typeof t.projects.items].sector}
                             </span>
                             <span className="text-accent">
-                              {t.projects.items[p as keyof typeof t.projects.items].scope}
+                              {t.projects.items[p.id as keyof typeof t.projects.items].scope}
                             </span>
                           </div>
                         </motion.div>
