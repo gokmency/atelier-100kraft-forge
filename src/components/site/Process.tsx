@@ -1,50 +1,53 @@
 import { useState } from "react";
 import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 import { Reveal, SectionLabel } from "./Reveal";
 
-const steps = [
-  {
-    id: "01",
-    title: "Discover",
-    body: "Brief, users, constraints, target cost. We define what the product must survive before we draw it.",
-    output: "Design brief · Benchmark · Cost target",
-  },
-  {
-    id: "02",
-    title: "Design",
-    body: "Form exploration in sketch and clay logic, then resolved surfaces and a full CAD assembly.",
-    output: "Concepts · CMF · CAD assembly",
-  },
-  {
-    id: "03",
-    title: "Prototype",
-    body: "Printed in the workshop within days — looks-like and works-like samples in engineering materials.",
-    output: "SLA / FDM / SLS parts",
-  },
-  {
-    id: "04",
-    title: "Validate",
-    body: "Fit, tolerance, drop, thermal and assembly checks. Iterations continue until the part behaves.",
-    output: "Test report · Revision set",
-  },
-  {
-    id: "05",
-    title: "Manufacture",
-    body: "Tooling design, supplier qualification and pilot run supervision through to steady production.",
-    output: "Mold design · DFM · Pilot run",
-  },
-];
+// steps array defined inside
 
 export function Process() {
+  const { t } = useTranslation();
   const [active, setActive] = useState(0);
+  const steps = [
+    {
+      id: "01",
+      title: t("process.discover.title"),
+      body: t("process.discover.body"),
+      output: t("process.discover.output"),
+    },
+    {
+      id: "02",
+      title: t("process.design.title"),
+      body: t("process.design.body"),
+      output: t("process.design.output"),
+    },
+    {
+      id: "03",
+      title: t("process.prototype.title"),
+      body: t("process.prototype.body"),
+      output: t("process.prototype.output"),
+    },
+    {
+      id: "04",
+      title: t("process.validate.title"),
+      body: t("process.validate.body"),
+      output: t("process.validate.output"),
+    },
+    {
+      id: "05",
+      title: t("process.manufacture.title"),
+      body: t("process.manufacture.body"),
+      output: t("process.manufacture.output"),
+    },
+  ];
 
   return (
     <section id="process" className="relative border-t border-border py-28 md:py-40">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="flex flex-wrap items-end justify-between gap-8">
-          <SectionLabel index="05" title="Process" />
+          <SectionLabel index="05" title={t("process.sectionTitle")} />
           <Reveal>
-            <span className="label-technical">Five stages · one continuous line</span>
+            <span className="label-technical">{t("process.subtitle")}</span>
           </Reveal>
         </div>
 
@@ -100,7 +103,7 @@ export function Process() {
             {steps[active]!.body}
           </motion.p>
           <div className="lg:col-span-5 lg:pl-10">
-            <span className="label-technical">Deliverables</span>
+            <span className="label-technical">{t("process.deliverables")}</span>
             <p className="mt-3 text-base text-muted-foreground">{steps[active]!.output}</p>
           </div>
         </div>

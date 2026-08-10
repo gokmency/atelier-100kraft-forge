@@ -1,56 +1,57 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 import { Reveal, SectionLabel } from "./Reveal";
 import sketch from "@/assets/case-sketch.jpg";
 import cad from "@/assets/case-cad.jpg";
 import final from "@/assets/case-final.jpg";
 
-const stages = [
-  { key: "sketch", label: "Sketch", image: sketch },
-  { key: "cad", label: "CAD", image: cad },
-  { key: "final", label: "Product", image: final },
-] as const;
+// stages defined inside
 
-const projects = [
-  {
-    id: "01",
-    name: "PX-1 Handheld",
-    sector: "Consumer Appliance",
-    year: "2025",
-    scope: "Product design · Prototyping · Mold design",
-    story:
-      "A cordless handheld built around a single-piece housing. We cut part count from 22 to 11, then engineered the tooling so the transparent chamber could be molded without a secondary operation.",
-  },
-  {
-    id: "02",
-    name: "Aluminium Series",
-    sector: "Professional Tools",
-    year: "2024",
-    scope: "Industrial design · CNC · Surface finishing",
-    story:
-      "A machined instrument body developed from clay study to anodised production part, with the grip geometry validated across nine printed iterations.",
-  },
-  {
-    id: "03",
-    name: "Velora Diffuser",
-    sector: "Home Product",
-    year: "2024",
-    scope: "3D design · Rapid prototyping · Manufacturing consulting",
-    story:
-      "Soft-touch beige housing with a copper control detail. Process selection and supplier qualification brought unit cost down 31% before the first production run.",
-  },
-];
+// projects array defined inside
 
 export function Projects() {
+  const { t } = useTranslation();
   const [stage, setStage] = useState<(typeof stages)[number]["key"]>("sketch");
   const [openIndex, setOpenIndex] = useState(0);
+  const stages = [
+    { key: "sketch", label: t("projects.stages.sketch"), image: sketch },
+    { key: "cad", label: t("projects.stages.cad"), image: cad },
+    { key: "final", label: t("projects.stages.product"), image: final },
+  ] as const;
+  const projects = [
+    {
+      id: "01",
+      name: "PX-1 Handheld",
+      sector: t("projects.p1.sector"),
+      year: "2025",
+      scope: t("projects.p1.scope"),
+      story: t("projects.p1.story"),
+    },
+    {
+      id: "02",
+      name: "Aluminium Series",
+      sector: t("projects.p2.sector"),
+      year: "2024",
+      scope: t("projects.p2.scope"),
+      story: t("projects.p2.story"),
+    },
+    {
+      id: "03",
+      name: "Velora Diffuser",
+      sector: t("projects.p3.sector"),
+      year: "2024",
+      scope: t("projects.p3.scope"),
+      story: t("projects.p3.story"),
+    },
+  ];
   const activeStage = stages.find((s) => s.key === stage)!;
   const project = projects[openIndex]!;
 
   return (
     <section id="projects" className="relative border-t border-border py-28 md:py-40">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
-        <SectionLabel index="04" title="Selected Work" />
+        <SectionLabel index="04" title={t("projects.sectionTitle")} />
 
         <div className="mt-16 grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-6">

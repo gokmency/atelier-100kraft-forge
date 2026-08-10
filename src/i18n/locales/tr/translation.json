@@ -1,0 +1,179 @@
+{
+  "nav": {
+    "atelier": "Atölye",
+    "services": "Hizmetler",
+    "work": "İşler",
+    "store": "MAĞAZA",
+    "startProject": "Proje Başlat",
+    "instagramAtelier": "100KRAFT Instagram'ı Ziyaret Et",
+    "instagramGrainz": "GRAINZ STUDIO Instagram'ı Ziyaret Et"
+  },
+  "hero": {
+    "subtitle": "Tasarım & Üretim Atölyesi",
+    "titleLine1": "Fikirden",
+    "titleLine2": "Üretime",
+    "titleLine2Highlight": "Kadar.",
+    "description": "Ürün Tasarımı, 3D Baskı, Kalıp Tasarımı ve Üretim Danışmanlığı.",
+    "startProject": "Proje Başlat",
+    "viewWork": "Seçili işleri gör"
+  },
+  "about": {
+    "section": "02",
+    "sectionTitle": "Atölye",
+    "headline": "Bir tasarım ve üretim atölyesi — sadece bir baskı merkezi değil.",
+    "description1": "100KRAFT, çizim masası ile üretim hattı arasında yer alır. Endüstriyel tasarım disiplini ve gerçek üretim kısıtlamalarını aynı anda gözeterek ürünleri şekillendiriyoruz; geometri, malzeme, takım ve maliyet sırayla değil, birlikte çözülür.",
+    "description2": "Atölyeden çıkan her konsept üretilebilirdir. Tek bir kalıp bile kesilmeden önce bunu reçine, filament ve metal ile kanıtlıyoruz.",
+    "stat1Value": "120+",
+    "stat1Label": "Geliştirilen ürün",
+    "stat2Value": "14",
+    "stat2Label": "Hizmet verilen sektör",
+    "stat3Value": "48s",
+    "stat3Label": "Prototip teslim süresi",
+    "stat4Value": "0.05mm",
+    "stat4Label": "Tipik tolerans"
+  },
+  "contact": {
+    "section": "08",
+    "sectionTitle": "İletişim",
+    "headlineStart": "Bize ne yapmak",
+    "headlineHighlight": "istediğinizi anlatın.",
+    "manufacturing": "Üretim talepleri",
+    "design": "Tasarım işbirlikleri",
+    "productDev": "Ürün geliştirme",
+    "startProject": "Proje Başlat",
+    "atelier": "Atölye",
+    "location": "Antalya, Türkiye",
+    "description": "Avrupa ve Orta Doğu'daki müşterilerle çalışıyoruz. Bize bir brief, eskiz veya CAD dosyası gönderin — iki iş günü içinde dönüş yapalım.",
+    "mapTitle": "Antalya, Türkiye Haritası"
+  },
+  "footer": {
+    "description": "Ürün Tasarımı · 3D Baskı · Kalıp Tasarımı · Üretim",
+    "companyBy": "BİR ŞİRKETİDİR:",
+    "location": "Antalya, Türkiye",
+    "backToTop": "Başa Dön ↑"
+  },
+  "services": {
+    "sectionTitle": "Yetenekler",
+    "description": "Altı disiplin, kesintisiz bir iş akışı. Bir proje herhangi bir noktada girebilir ve üretilebilir bir ürün olarak çıkabilir.",
+    "productDesign": {
+      "title": "Ürün Tasarımı",
+      "meta": "Geometri & Akış",
+      "desc": "Estetik ve montaj mantığını dengeleyerek kullanıcı gereksinimlerini ve teknik kısıtlamaları tutarlı bir ürün mimarisine dönüştürüyoruz."
+    },
+    "design3d": {
+      "title": "3D Tasarım",
+      "meta": "Yüzeyler & Katı Modeller",
+      "desc": "Mühendislik, render ve simülasyon için hazır A Sınıfı yüzey oluşturma ve parametrik katı modelleme."
+    },
+    "printing3d": {
+      "title": "3D Baskı",
+      "meta": "FDM & SLA",
+      "desc": "Ölçek, ergonomi ve geçme parçalarını bir gecede doğrulamak için kurum içi polimer baskı."
+    },
+    "prototyping": {
+      "title": "Hızlı Prototipleme",
+      "meta": "Görsel, İşlevsel",
+      "desc": "Yatırımcı sunumları ve kullanıcı testleri için CNC işleme, döküm ve boyamayı birleştiren bitmiş modeller."
+    },
+    "moldDesign": {
+      "title": "Kalıp Tasarımı",
+      "meta": "Takım Mimarisi",
+      "desc": "Çıkma açıları, ayrım hatları, soğutma kanalları ve itici stratejilerini kapsayan Üretim İçin Tasarım (DFM)."
+    },
+    "consulting": {
+      "title": "Üretim Danışmanlığı",
+      "meta": "Süreç & Tedarik",
+      "desc": "Bir prototip ile seri üretim arasındaki boşluğu kapatmak için kaynak bulma, maliyet optimizasyonu ve tedarikçi yeterliliği."
+    }
+  },
+  "projects": {
+    "sectionTitle": "Seçili İşler",
+    "stages": {
+      "sketch": "Eskiz",
+      "cad": "CAD",
+      "product": "Ürün"
+    },
+    "p1": {
+      "sector": "Tüketici Elektroniği",
+      "scope": "Ürün tasarımı · Prototipleme · Kalıp tasarımı",
+      "story": "Tek parça gövde etrafında inşa edilmiş kablosuz bir el aleti. Parça sayısını 22'den 11'e düşürdük, ardından şeffaf haznenin ikincil bir işleme gerek kalmadan kalıplanabilmesi için takımlamayı tasarladık."
+    },
+    "p2": {
+      "sector": "Profesyonel Aletler",
+      "scope": "Endüstriyel tasarım · CNC · Yüzey bitirme",
+      "story": "Kil çalışmasından eloksallı üretim parçasına kadar geliştirilen işlenmiş bir alet gövdesi, tutma geometrisi dokuz baskı yinelemesi boyunca doğrulandı."
+    },
+    "p3": {
+      "sector": "Ev Ürünleri",
+      "scope": "3D tasarım · Hızlı prototipleme · Üretim danışmanlığı",
+      "story": "Bakır kontrol detaylı yumuşak dokunuşlu bej gövde. Süreç seçimi ve tedarikçi yeterliliği, ilk üretim aşamasından önce birim maliyetini %31 oranında düşürdü."
+    }
+  },
+  "process": {
+    "sectionTitle": "Süreç",
+    "subtitle": "Beş aşama · bir kesintisiz çizgi",
+    "deliverables": "Çıktılar",
+    "discover": {
+      "title": "Keşif",
+      "body": "Brief, kullanıcılar, kısıtlamalar, hedef maliyet. Ürünü çizmeden önce neye dayanması gerektiğini tanımlarız.",
+      "output": "Tasarım brief'i · Karşılaştırma · Maliyet hedefi"
+    },
+    "design": {
+      "title": "Tasarım",
+      "body": "Eskiz ve kil mantığında form keşfi, ardından çözümlenmiş yüzeyler ve tam bir CAD montajı.",
+      "output": "Konseptler · CMF · CAD montajı"
+    },
+    "prototype": {
+      "title": "Prototip",
+      "body": "Günler içinde atölyede basılır — mühendislik malzemelerinde görsel ve işlevsel örnekler.",
+      "output": "SLA / FDM / SLS parçalar"
+    },
+    "validate": {
+      "title": "Doğrulama",
+      "body": "Uyum, tolerans, düşme, termal ve montaj kontrolleri. Parça istenildiği gibi davranana kadar yinelemeler devam eder.",
+      "output": "Test raporu · Revizyon seti"
+    },
+    "manufacture": {
+      "title": "Üretim",
+      "body": "Kalıp tasarımı, tedarikçi kalifikasyonu ve pilot üretim gözetiminden istikrarlı üretime kadar.",
+      "output": "Kalıp tasarımı · DFM · Pilot üretim"
+    }
+  },
+  "workshop": {
+    "sectionTitle": "Atölye",
+    "headline": "Çizim masasına üç metre mesafede bir üretim laboratuvarı.",
+    "description": "Tasarım ve üretim Antalya'da aynı çatıyı paylaşıyor. Sabah yapılan bir geometri değişikliği öğleden sonra elde edilen bir parçadır — bu yüzden yinelemelerimiz haftalar yerine saatlerle ölçülür.",
+    "eq1": {
+      "name": "Katmanlı Üretim",
+      "desc": "FDM · SLA · SLS yazıcılar"
+    },
+    "eq2": {
+      "name": "Malzemeler",
+      "desc": "PA12, ASA, PC, TPU, reçine, karbon dolgulu"
+    },
+    "eq3": {
+      "name": "Metroloji",
+      "desc": "Kumpaslar, mastarlar, 3D tarama"
+    },
+    "eq4": {
+      "name": "Yüzey İşlem",
+      "desc": "Zımparalama, buharla pürüzsüzleştirme, boyama, eloksal"
+    }
+  },
+  "expertise": {
+    "sectionTitle": "Üretim Uzmanlığı",
+    "headline": "Üretim hattında hayatta kalan tasarım kararları.",
+    "i1": {
+      "title": "Plastik Enjeksiyon",
+      "body": "Kalıp yerleşimi, yolluk ve soğutma parça ile birlikte tasarlanır; artı çıkma açısı, çekme ve et kalınlığı çelik kesilmeden önce çözülür."
+    },
+    "i2": {
+      "title": "Üretim Optimizasyonu",
+      "body": "Çevrim süresi, parça konsolidasyonu ve süreç seçimi hacme karşı gözden geçirilir, böylece algılanan kaliteye dokunulmadan birim maliyet düşer."
+    },
+    "i3": {
+      "title": "Ürün Geliştirme",
+      "body": "Tedarikçi yeterliliği, numune onayı ve üretim dokümantasyonu dahil olmak üzere brief'ten pilot üretime kadar uçtan uca sahiplik."
+    }
+  }
+}

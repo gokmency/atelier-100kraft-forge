@@ -1,33 +1,36 @@
 import { Reveal } from "./Reveal";
+import { useTranslation } from "react-i18next";
 import { Instagram } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
-const inquiries = [
-  ["Manufacturing inquiries", "production@100kraft.com"],
-  ["Design collaborations", "studio@100kraft.com"],
-  ["Product development", "projects@100kraft.com"],
-];
+// inquiries defined inside
 
 export function Contact() {
+  const { t } = useTranslation();
   return (
     <section id="contact" className="relative border-t border-border py-28 md:py-40">
       <div className="blueprint-grid pointer-events-none absolute inset-0 opacity-60" />
       <div className="relative mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="flex items-baseline gap-4">
           <span className="label-technical text-accent">08</span>
-          <span className="label-technical">Contact</span>
+          <span className="label-technical">{t("contact.sectionTitle")}</span>
         </div>
 
         <Reveal>
           <h2 className="mt-14 max-w-4xl font-display text-[11vw] leading-[0.9] sm:text-[7vw] lg:text-[5.4rem]">
-            Tell us what you want to <span className="italic text-accent">build.</span>
+            {t("contact.headlineStart")}{" "}
+            <span className="italic text-accent">{t("contact.headlineHighlight")}</span>
           </h2>
         </Reveal>
 
         <div className="mt-20 grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <div className="divide-y divide-border border-y border-border">
-              {inquiries.map(([label, email], i) => (
+              {[
+                [t("contact.manufacturing"), "production@100kraft.com"],
+                [t("contact.design"), "studio@100kraft.com"],
+                [t("contact.productDev"), "projects@100kraft.com"],
+              ].map(([label, email], i) => (
                 <Reveal key={label} delay={0.05 * i}>
                   <a
                     href={`mailto:${email}`}
@@ -49,7 +52,7 @@ export function Contact() {
               >
                 <span className="absolute inset-0 translate-y-full bg-accent transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0" />
                 <span className="label-technical relative text-primary-foreground">
-                  Start a Project
+                  {t("contact.startProject")}
                 </span>
                 <span className="relative text-primary-foreground transition-transform duration-500 group-hover:translate-x-1">
                   →
@@ -60,17 +63,16 @@ export function Contact() {
 
           <div className="lg:col-span-5 lg:pl-10">
             <Reveal>
-              <span className="label-technical">Atelier</span>
+              <span className="label-technical">{t("contact.atelier")}</span>
               <p className="mt-4 font-display text-2xl leading-snug">
-                Antalya, Turkey
+                {t("contact.location")}
                 <br />
                 <span className="text-muted-foreground">36.8969° N, 30.7133° E</span>
               </p>
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-10 max-w-sm text-base leading-relaxed text-muted-foreground">
-                Working with clients across Europe and the Middle East. Send a brief, a sketch or a
-                CAD file — we reply within two working days.
+                {t("contact.description")}
               </p>
             </Reveal>
 
@@ -85,7 +87,7 @@ export function Contact() {
                   marginWidth={0}
                   src="https://www.openstreetmap.org/export/embed.html?bbox=30.6933%2C36.8769%2C30.7333%2C36.9169&amp;layer=mapnik&amp;marker=36.8969%2C30.7133"
                   className="filter grayscale contrast-125 opacity-80"
-                  title="Map of Antalya, Turkey"
+                  title={t("contact.mapTitle")}
                 ></iframe>
               </div>
             </Reveal>
@@ -97,15 +99,14 @@ export function Contact() {
 }
 
 export function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="border-t border-border py-14">
       <div className="mx-auto flex max-w-[1600px] flex-col gap-10 px-6 md:px-12">
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div className="flex flex-col gap-4">
             <span className="font-display text-2xl tracking-[-0.04em]">100KRAFT</span>
-            <span className="label-technical text-muted-foreground">
-              Product Design · 3D Printing · Mold Design · Manufacturing
-            </span>
+            <span className="label-technical text-muted-foreground">{t("footer.description")}</span>
           </div>
 
           <div className="flex flex-col gap-6 md:items-end">
@@ -153,7 +154,7 @@ export function Footer() {
               className="group flex items-center gap-2"
             >
               <span className="label-technical text-muted-foreground transition-colors group-hover:text-foreground">
-                A COMPANY BY
+                {t("footer.companyBy")}
               </span>
               <span className="font-display text-lg tracking-wide transition-colors group-hover:text-accent">
                 GRAINZ STUDIO
@@ -164,13 +165,13 @@ export function Footer() {
 
         <div className="border-t border-border/50 pt-8 flex justify-between items-center">
           <span className="label-technical text-muted-foreground">
-            © {new Date().getFullYear()} Antalya, Turkey
+            © {new Date().getFullYear()} {t("footer.location")}
           </span>
           <a
             href="#top"
             className="label-technical text-muted-foreground hover:text-foreground transition-colors"
           >
-            Back to Top ↑
+            {t("footer.backToTop")}
           </a>
         </div>
       </div>

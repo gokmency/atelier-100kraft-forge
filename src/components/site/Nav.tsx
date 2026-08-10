@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 import { Instagram } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
-const links = [
-  { href: "/#about", label: "Atelier" },
-  { href: "/#services", label: "Services" },
-  { href: "/#projects", label: "Work" },
-];
+// Links defined inside to use translation
 
 export function Nav() {
+  const { t, i18n } = useTranslation();
+  const toggleLanguage = () => {
+    i18n.changeLanguage(i18n.language === "en" ? "tr" : "en");
+  };
+
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -33,7 +35,11 @@ export function Nav() {
         </a>
 
         <nav className="hidden items-center gap-9 md:flex">
-          {links.map((l) => (
+          {[
+            { href: "/#about", label: t("nav.atelier") },
+            { href: "/#services", label: t("nav.services") },
+            { href: "/#projects", label: t("nav.work") },
+          ].map((l) => (
             <a
               key={l.href}
               href={l.href}
@@ -60,7 +66,7 @@ export function Nav() {
                   </a>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Visit 100KRAFT Instagram</p>
+                  <p>{t("nav.instagramAtelier")}</p>
                 </TooltipContent>
               </Tooltip>
               <Tooltip>
@@ -76,18 +82,27 @@ export function Nav() {
                   </a>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Visit GRAINZ STUDIO Instagram</p>
+                  <p>{t("nav.instagramGrainz")}</p>
                 </TooltipContent>
               </Tooltip>
             </div>
           </TooltipProvider>
+          <button
+            onClick={toggleLanguage}
+            className="group relative inline-flex h-[42px] items-center justify-center border border-foreground/20 px-3 bg-background hover:bg-accent hover:text-primary-foreground transition-colors"
+            aria-label="Toggle language"
+          >
+            <span className="label-technical text-foreground font-semibold transition-colors duration-500 group-hover:text-primary-foreground">
+              {i18n.language === "en" ? "TR" : "EN"}
+            </span>
+          </button>
           <Link
             to="/store"
             className="group relative inline-flex items-center gap-3 overflow-hidden border border-foreground/20 px-5 py-2.5 bg-background"
           >
             <span className="absolute inset-0 translate-y-full bg-accent transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0" />
             <span className="label-technical relative text-foreground font-semibold transition-colors duration-500 group-hover:text-primary-foreground">
-              STORE
+              {t("nav.store")}
             </span>
           </Link>
           <a
@@ -96,7 +111,7 @@ export function Nav() {
           >
             <span className="absolute inset-0 -translate-y-full bg-foreground transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0" />
             <span className="label-technical relative text-foreground transition-colors duration-500 group-hover:text-primary-foreground">
-              Start a Project
+              {t("nav.startProject")}
             </span>
           </a>
         </div>

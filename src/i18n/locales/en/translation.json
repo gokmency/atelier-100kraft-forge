@@ -1,0 +1,179 @@
+{
+  "nav": {
+    "atelier": "Atelier",
+    "services": "Services",
+    "work": "Work",
+    "store": "STORE",
+    "startProject": "Start a Project",
+    "instagramAtelier": "Visit 100KRAFT Instagram",
+    "instagramGrainz": "Visit GRAINZ STUDIO Instagram"
+  },
+  "hero": {
+    "subtitle": "Design & Manufacturing Atelier",
+    "titleLine1": "From Idea",
+    "titleLine2": "to",
+    "titleLine2Highlight": "Production.",
+    "description": "Product Design, 3D Printing, Mold Design & Manufacturing Consulting.",
+    "startProject": "Start a Project",
+    "viewWork": "View selected work"
+  },
+  "about": {
+    "section": "02",
+    "sectionTitle": "The Atelier",
+    "headline": "A design and manufacturing atelier — not a print shop.",
+    "description1": "100KRAFT sits between the drawing board and the production line. We shape products with the discipline of industrial design and the constraints of real manufacturing held in the same hand — geometry, material, tooling and cost resolved together rather than in sequence.",
+    "description2": "Every concept that leaves the atelier is manufacturable. We prove it in resin, filament and metal before a single mold is cut.",
+    "stat1Value": "120+",
+    "stat1Label": "Products developed",
+    "stat2Value": "14",
+    "stat2Label": "Industries served",
+    "stat3Value": "48h",
+    "stat3Label": "Prototype turnaround",
+    "stat4Value": "0.05mm",
+    "stat4Label": "Typical tolerance"
+  },
+  "contact": {
+    "section": "08",
+    "sectionTitle": "Contact",
+    "headlineStart": "Tell us what you want to",
+    "headlineHighlight": "build.",
+    "manufacturing": "Manufacturing inquiries",
+    "design": "Design collaborations",
+    "productDev": "Product development",
+    "startProject": "Start a Project",
+    "atelier": "Atelier",
+    "location": "Antalya, Turkey",
+    "description": "Working with clients across Europe and the Middle East. Send a brief, a sketch or a CAD file — we reply within two working days.",
+    "mapTitle": "Map of Antalya, Turkey"
+  },
+  "footer": {
+    "description": "Product Design · 3D Printing · Mold Design · Manufacturing",
+    "companyBy": "A COMPANY BY",
+    "location": "Antalya, Turkey",
+    "backToTop": "Back to Top ↑"
+  },
+  "services": {
+    "sectionTitle": "Capabilities",
+    "description": "Six disciplines, one continuous workflow. A project can enter at any point and leave as a manufacturable product.",
+    "productDesign": {
+      "title": "Product Design",
+      "meta": "Geometry & Flow",
+      "desc": "Translating user requirements and technical constraints into a cohesive product architecture, balancing aesthetics with assembly logic."
+    },
+    "design3d": {
+      "title": "3D Design",
+      "meta": "Surfacing & Solids",
+      "desc": "Class-A surfacing and parametric solid modeling ready for downstream engineering, rendering and simulation."
+    },
+    "printing3d": {
+      "title": "3D Printing",
+      "meta": "FDM & SLA",
+      "desc": "In-house polymer printing to validate scale, ergonomics and snap-fits overnight."
+    },
+    "prototyping": {
+      "title": "Rapid Prototyping",
+      "meta": "Looks-like, works-like",
+      "desc": "Finished models mixing CNC machining, casting and painting for investor pitches and user testing."
+    },
+    "moldDesign": {
+      "title": "Mold Design",
+      "meta": "Tooling Architecture",
+      "desc": "Design for Manufacture (DFM) covering draft angles, parting lines, cooling channels and ejection strategies."
+    },
+    "consulting": {
+      "title": "Manufacturing Consulting",
+      "meta": "Process & Supply",
+      "desc": "Sourcing, cost optimization and supplier qualification to bridge the gap between a prototype and mass production."
+    }
+  },
+  "projects": {
+    "sectionTitle": "Selected Work",
+    "stages": {
+      "sketch": "Sketch",
+      "cad": "CAD",
+      "product": "Product"
+    },
+    "p1": {
+      "sector": "Consumer Appliance",
+      "scope": "Product design · Prototyping · Mold design",
+      "story": "A cordless handheld built around a single-piece housing. We cut part count from 22 to 11, then engineered the tooling so the transparent chamber could be molded without a secondary operation."
+    },
+    "p2": {
+      "sector": "Professional Tools",
+      "scope": "Industrial design · CNC · Surface finishing",
+      "story": "A machined instrument body developed from clay study to anodised production part, with the grip geometry validated across nine printed iterations."
+    },
+    "p3": {
+      "sector": "Home Product",
+      "scope": "3D design · Rapid prototyping · Manufacturing consulting",
+      "story": "Soft-touch beige housing with a copper control detail. Process selection and supplier qualification brought unit cost down 31% before the first production run."
+    }
+  },
+  "process": {
+    "sectionTitle": "Process",
+    "subtitle": "Five stages · one continuous line",
+    "deliverables": "Deliverables",
+    "discover": {
+      "title": "Discover",
+      "body": "Brief, users, constraints, target cost. We define what the product must survive before we draw it.",
+      "output": "Design brief · Benchmark · Cost target"
+    },
+    "design": {
+      "title": "Design",
+      "body": "Form exploration in sketch and clay logic, then resolved surfaces and a full CAD assembly.",
+      "output": "Concepts · CMF · CAD assembly"
+    },
+    "prototype": {
+      "title": "Prototype",
+      "body": "Printed in the workshop within days — looks-like and works-like samples in engineering materials.",
+      "output": "SLA / FDM / SLS parts"
+    },
+    "validate": {
+      "title": "Validate",
+      "body": "Fit, tolerance, drop, thermal and assembly checks. Iterations continue until the part behaves.",
+      "output": "Test report · Revision set"
+    },
+    "manufacture": {
+      "title": "Manufacture",
+      "body": "Tooling design, supplier qualification and pilot run supervision through to steady production.",
+      "output": "Mold design · DFM · Pilot run"
+    }
+  },
+  "workshop": {
+    "sectionTitle": "The Workshop",
+    "headline": "A fabrication laboratory, three metres from the drawing board.",
+    "description": "Design and production share one roof in Antalya. A geometry change in the morning is a part in hand by afternoon — which is why our iterations are measured in hours instead of weeks.",
+    "eq1": {
+      "name": "Additive",
+      "desc": "FDM · SLA · SLS printers"
+    },
+    "eq2": {
+      "name": "Materials",
+      "desc": "PA12, ASA, PC, TPU, resin, carbon-filled"
+    },
+    "eq3": {
+      "name": "Metrology",
+      "desc": "Calipers, gauges, 3D scanning"
+    },
+    "eq4": {
+      "name": "Finishing",
+      "desc": "Sanding, vapour smoothing, painting, anodising"
+    }
+  },
+  "expertise": {
+    "sectionTitle": "Manufacturing Expertise",
+    "headline": "Design decisions that survive the production line.",
+    "i1": {
+      "title": "Injection Molding",
+      "body": "Tool layout, gating and cooling designed with the part, plus draft, shrinkage and wall-thickness resolved before steel is cut."
+    },
+    "i2": {
+      "title": "Manufacturing Optimization",
+      "body": "Cycle-time, part consolidation and process selection reviewed against volume so unit cost falls without touching perceived quality."
+    },
+    "i3": {
+      "title": "Product Development",
+      "body": "End-to-end ownership from brief to pilot run, including supplier qualification, sample approval and production documentation."
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
+import { useTranslation } from "react-i18next";
 import { Reveal, SectionLabel } from "./Reveal";
 
 type Service = {
@@ -163,21 +164,64 @@ function ServiceCard({ s, i }: { s: Service; i: number }) {
 }
 
 export function Services() {
+  const { t } = useTranslation();
   return (
     <section id="services" className="relative border-t border-border py-28 md:py-40">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <div className="flex flex-wrap items-end justify-between gap-8">
-          <SectionLabel index="03" title="Capabilities" />
+          <SectionLabel index="03" title={t("services.sectionTitle")} />
           <Reveal>
             <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-              Six disciplines, one continuous workflow. A project can enter at any point and leave
-              as a manufacturable product.
+              {t("services.description")}
             </p>
           </Reveal>
         </div>
 
         <div className="mt-16 grid gap-px bg-border md:grid-cols-2 lg:grid-cols-3">
-          {services.map((s, i) => (
+          {[
+            {
+              id: "01",
+              title: t("services.productDesign.title"),
+              meta: t("services.productDesign.meta"),
+              description: t("services.productDesign.desc"),
+              visual: "product" as const,
+            },
+            {
+              id: "02",
+              title: t("services.design3d.title"),
+              meta: t("services.design3d.meta"),
+              description: t("services.design3d.desc"),
+              visual: "cad" as const,
+            },
+            {
+              id: "03",
+              title: t("services.printing3d.title"),
+              meta: t("services.printing3d.meta"),
+              description: t("services.printing3d.desc"),
+              visual: "print" as const,
+            },
+            {
+              id: "04",
+              title: t("services.prototyping.title"),
+              meta: t("services.prototyping.meta"),
+              description: t("services.prototyping.desc"),
+              visual: "proto" as const,
+            },
+            {
+              id: "05",
+              title: t("services.moldDesign.title"),
+              meta: t("services.moldDesign.meta"),
+              description: t("services.moldDesign.desc"),
+              visual: "mold" as const,
+            },
+            {
+              id: "06",
+              title: t("services.consulting.title"),
+              meta: t("services.consulting.meta"),
+              description: t("services.consulting.desc"),
+              visual: "consult" as const,
+            },
+          ].map((s, i) => (
             <ServiceCard key={s.id} s={s} i={i} />
           ))}
         </div>
